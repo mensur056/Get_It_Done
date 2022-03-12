@@ -1,4 +1,6 @@
-class Task {
+import 'package:equatable/equatable.dart';
+
+class Task extends Equatable{
   final String title;
   final String color;
   final int icon;
@@ -32,4 +34,8 @@ class Task {
 
   Map<String, dynamic> toJason() =>
       {'title': title, 'icon': icon, 'color': color, 'todos': todos};
+
+  @override
+
+  List<Object?> get props => [title,icon,color,];
 }
