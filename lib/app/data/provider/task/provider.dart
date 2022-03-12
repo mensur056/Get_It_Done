@@ -7,7 +7,7 @@ import 'package:get_it_done/app/data/services/storage/services.dart';
 import '../../models/task.dart';
 
 class TaskProvider {
-  StorageService _storage = Get.find<StorageService>();
+ final  _storage = Get.find<StorageService>();
 
   // {'tasks':[{'color':'#ff123456','title':'Work','icon':0xe123}]}
 
