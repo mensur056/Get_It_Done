@@ -21,7 +21,20 @@ class AddCard extends StatelessWidget {
       child: InkWell(
         onTap: () async {
           await Get.defaultDialog(
-              titlePadding: EdgeInsets.symmetric(vertical: 5.0.wp), radius: 5,title: 'Task Type');
+            titlePadding: EdgeInsets.symmetric(vertical: 5.0.wp),
+            radius: 5,
+            title: 'Task Type',
+            content: Form(
+              key: homeCtrl.formKey,
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: homeCtrl.editCtrl,
+                  )
+                ],
+              ),
+            ),
+          );
         },
         child: DottedBorder(
           color: Colors.grey[400]!,
