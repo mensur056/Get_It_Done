@@ -24,16 +24,18 @@ class HomePage extends GetView<HomeController> {
                     TextStyle(fontSize: 24.0.sp, fontWeight: FontWeight.bold),
               ),
             ),
-            GridView.count(
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              physics: const ClampingScrollPhysics(),
-              children: [
-                ...controller.tasks
-                    .map((element) => TaskCard(task: element))
-                    .toList(),
-                AddCard()
-              ],
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                children: [
+                  ...controller.tasks
+                      .map((element) => TaskCard(task: element))
+                      .toList(),
+                  AddCard()
+                ],
+              ),
             )
           ],
         ),
