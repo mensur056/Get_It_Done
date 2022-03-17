@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_it_done/app/core/utils/extensions.dart';
 import 'package:get_it_done/app/modules/home/controller.dart';
 import '../../../data/models/task.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class TaskCard extends StatelessWidget {
   final homeCtrl = Get.find<HomeController>();
@@ -30,6 +31,22 @@ class TaskCard extends StatelessWidget {
         ],
       ),
       margin: EdgeInsets.all(3.0.wp),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const [
+          StepProgressIndicator(
+            // TODO change after finish todo CRUD
+            totalSteps: 100,
+            padding: 0,
+            currentStep: 80,
+            size: 5,
+            selectedGradientColor: LinearGradient(
+                begin: Alignment.topLeft,
+                colors: [],
+                end: Alignment.bottomRight),
+          )
+        ],
+      ),
     );
   }
 }
