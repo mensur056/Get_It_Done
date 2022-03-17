@@ -5,28 +5,28 @@ import '../core/values/icons.dart';
 List<Icon> getIcons() {
   return const [
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
-      color: purple,
+      IconData(personIcon, fontFamily: 'MaterialIcons',),
+      color: purple,size: 30,
     ),
     Icon(
       IconData(workIcon, fontFamily: 'MaterialIcons'),
-      color: pink,
+      color: pink,size: 30,
     ),
     Icon(
       IconData(movieIcon, fontFamily: 'MaterialIcons'),
-      color: green,
+      color: green,size:30,
     ),
     Icon(
       IconData(sportIcon, fontFamily: 'MaterialIcons'),
-      color: yellow,
+      color: yellow,size: 30,
     ),
     Icon(
       IconData(travelIcon, fontFamily: 'MaterialIcons'),
-      color: blue,
+      color: blue,size: 30,
     ),
     Icon(
       IconData(shopIcon, fontFamily: 'MaterialIcons'),
-      color: lightBlue,
+      color: lightBlue,size: 30,
     )
   ];
 }
