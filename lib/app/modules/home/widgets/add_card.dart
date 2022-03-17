@@ -77,7 +77,12 @@ class AddCard extends StatelessWidget {
                         minimumSize: const Size(150, 40),
                       ),
                       onPressed: () {
-                        if (homeCtrl.formKey.currentState!.validate()) {}
+                        if (homeCtrl.formKey.currentState!.validate()) {
+                          int icon =
+                              icons[homeCtrl.chipIndex.value].icon!.codePoint;
+                          String color =
+                              icons[homeCtrl.chipIndex.value].color!.toHex();
+                        }
                       },
                       child: const Text('Confirm'))
                 ],
