@@ -28,7 +28,12 @@ class HomePage extends GetView<HomeController> {
               crossAxisCount: 2,
               shrinkWrap: true,
               physics: const ClampingScrollPhysics(),
-              children: [TaskCard(task: const Task(title: "title", color:'#FF2B60E6', icon: 0xe59c),), AddCard()],
+              children: [
+                ...controller.tasks
+                    .map((element) => TaskCard(task: element))
+                    .toList(),
+                AddCard()
+              ],
             )
           ],
         ),
