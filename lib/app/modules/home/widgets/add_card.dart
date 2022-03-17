@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_it_done/app/core/utils/extensions.dart';
 import 'package:get_it_done/app/modules/home/controller.dart';
+
+import '../../../widget/icons.dart';
 
 class AddCard extends StatelessWidget {
   AddCard({Key? key}) : super(key: key);
@@ -8,6 +11,11 @@ class AddCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final icons = getIcons();
+    var squareWidth = Get.width - 12.0.wp;
+    return Container(
+      height: squareWidth / 2,
+      width: squareWidth / 2,
+    );
   }
 }
