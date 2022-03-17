@@ -35,9 +35,7 @@ class AddCard extends StatelessWidget {
                       decoration: const InputDecoration(
                           border: OutlineInputBorder(), labelText: 'Title'),
                       validator: (value) {
-                        if (value == null || value
-                            .trim()
-                            .isEmpty) {
+                        if (value == null || value.trim().isEmpty) {
                           return 'Please enter your task title';
                         }
                         return null;
@@ -46,16 +44,29 @@ class AddCard extends StatelessWidget {
                   ),
                   Wrap(
                       spacing: 2.0.wp,
-                      children: icons.map((e) =>
-                          Obx(() {
-                            final index = icons.indexOf(e);
-                            return ChoiceChip(label:,selected: ,)
-                          })).toList())
+                      children: icons
+                          .map(
+                            (e) => Obx(
+                              () {
+                                final index = icons.indexOf(e);
+                                return ChoiceChip(
+                                  selectedColor: Colors.grey,
+                                  backgroundColor: Colors.white,
+                                  pressElevation: 0,
+                                  label: e,
+                                  selected: homeCtrl.chipIndex.value == index,
+                                  onSelected: (bool selected) {
+                                    homeCtrl.chipIndex.value =
+                                        selected ? index : 0;
+                                  },
+                                );
+                              },
+                            ),
+                          )
+                          .toList())
                 ],
-              )
-              ,
-            )
-            ,
+              ),
+            ),
           );
         },
         child: DottedBorder(
