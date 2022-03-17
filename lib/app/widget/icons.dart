@@ -9,23 +9,23 @@ List<Icon> getIcons() {
       color: purple,
     ),
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
+      IconData(workIcon, fontFamily: 'MaterialIcons'),
       color: pink,
     ),
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
+      IconData(movieIcon, fontFamily: 'MaterialIcons'),
       color: green,
     ),
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
+      IconData(sportIcon, fontFamily: 'MaterialIcons'),
       color: yellow,
     ),
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
+      IconData(travelIcon, fontFamily: 'MaterialIcons'),
       color: blue,
     ),
     Icon(
-      IconData(personIcon, fontFamily: 'MaterialIcons'),
+      IconData(shopIcon, fontFamily: 'MaterialIcons'),
       color: lightBlue,
     )
   ];
