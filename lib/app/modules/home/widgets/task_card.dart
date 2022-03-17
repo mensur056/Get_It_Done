@@ -60,21 +60,24 @@ class TaskCard extends StatelessWidget {
               color: color,
             ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                task.title,
-                style:
-                    TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0.sp),
-                overflow: TextOverflow.ellipsis,
-              ),
-              Text(
-                '${task.todos?.length ?? 0} Task',
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.grey),
-              )
-            ],
+          Padding(
+            padding:  EdgeInsets.all(6.0.wp),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  task.title,
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0.sp),
+                  overflow: TextOverflow.ellipsis,
+                ),SizedBox(height: 2.0.wp),
+                Text(
+                  '${task.todos?.length ?? 0} Task',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.grey),
+                )
+              ],
+            ),
           )
         ],
       ),
