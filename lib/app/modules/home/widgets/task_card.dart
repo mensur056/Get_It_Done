@@ -33,18 +33,22 @@ class TaskCard extends StatelessWidget {
       margin: EdgeInsets.all(3.0.wp),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          StepProgressIndicator(
-            // TODO change after finish todo CRUD
-            totalSteps: 100,
-            padding: 0,
-            currentStep: 80,
-            size: 5,
-            selectedGradientColor: LinearGradient(
-                begin: Alignment.topLeft,
-                colors: [],
-                end: Alignment.bottomRight),
-          )
+        children: [
+        StepProgressIndicator(
+        // TODO change after finish todo CRUD
+        totalSteps: 100,
+        padding: 0,
+        currentStep: 80,
+        size: 5,
+        selectedGradientColor: LinearGradient(
+          begin: Alignment.topLeft,
+          colors: [color.withOpacity(0.5), color],
+          end: Alignment.bottomRight,),
+        unselectedGradientColor: const LinearGradient(
+            begin: Alignment.topLeft,
+            colors: [Colors.white, Colors.white],
+            end: Alignment.bottomRight
+        )
         ],
       ),
     );
