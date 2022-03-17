@@ -32,6 +32,9 @@ class AddCard extends StatelessWidget {
                     controller: homeCtrl.editCtrl,
                     decoration: const InputDecoration(
                         border: OutlineInputBorder(), labelText: 'Title'),
+                    validator: (value) {
+                      if (value == null || value.trim().isEmpty) {}
+                    },
                   )
                 ],
               ),
