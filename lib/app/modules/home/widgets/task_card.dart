@@ -67,8 +67,13 @@ class TaskCard extends StatelessWidget {
                 task.title,
                 style:
                     TextStyle(fontWeight: FontWeight.bold, fontSize: 12.0.sp),
+                overflow: TextOverflow.ellipsis,
               ),
-              Text('${task.todos?.length ?? 0} Task')
+              Text(
+                '${task.todos?.length ?? 0} Task',
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, color: Colors.grey),
+              )
             ],
           )
         ],
