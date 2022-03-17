@@ -15,5 +15,6 @@ class HomeController extends GetxController {
   void onInit() {
     super.onInit();
     tasks.assignAll(taskRepository.readTasks());
+    ever(tasks, (_) => taskRepository.writeTask(tasks));
   }
 }
