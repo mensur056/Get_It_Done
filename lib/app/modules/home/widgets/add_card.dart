@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_it_done/app/core/utils/extensions.dart';
+import 'package:get_it_done/app/core/values/colors.dart';
 import 'package:get_it_done/app/modules/home/controller.dart';
 
 import '../../../widget/icons.dart';
@@ -66,7 +67,19 @@ class AddCard extends StatelessWidget {
                               ),
                             )
                             .toList()),
-                  )
+                  ),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        minimumSize: const Size(150, 40),
+                      ),
+                      onPressed: () {
+                        if (homeCtrl.formKey.currentState!.validate()) {}
+                      },
+                      child: const Text('Confirm'))
                 ],
               ),
             ),
