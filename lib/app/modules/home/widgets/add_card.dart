@@ -30,6 +30,8 @@ class AddCard extends StatelessWidget {
                 children: [
                   TextFormField(
                     controller: homeCtrl.editCtrl,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(), labelText: 'Title'),
                   )
                 ],
               ),
