@@ -9,7 +9,9 @@ class HomeController extends GetxController {
   TaskRepository taskRepository;
 
   HomeController({required this.taskRepository});
-final editCtrl=TextEditingController();
+
+  final chipIndex = 0.obs;
+  final editCtrl = TextEditingController();
   final formKey = GlobalKey<FormState>();
   final tasks = <Task>[].obs;
 
@@ -23,5 +25,9 @@ final editCtrl=TextEditingController();
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void changeChipIndex(int value) {
+    chipIndex.value = value;
   }
 }
