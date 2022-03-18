@@ -29,7 +29,13 @@ class HomePage extends GetView<HomeController> {
                 physics: const ClampingScrollPhysics(),
                 children: [
                   ...controller.tasks
-                      .map((element) => TaskCard(task: element))
+                      .map((element) => LongPressDraggable(
+                            feedback: Opacity(
+                              opacity: 0.8,
+                              child: TaskCard(task: element),
+                            ),
+                            child: TaskCard(task: element),
+                          ))
                       .toList(),
                   AddCard()
                 ],
