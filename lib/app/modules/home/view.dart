@@ -63,8 +63,7 @@ class HomePage extends GetView<HomeController> {
                     child: Icon(
                         controller.deleting.value ? Icons.delete : Icons.add),
                   ),
-            )
-            ,
+            );
           }
       ),
     );
