@@ -5,8 +5,6 @@ import 'package:get_it_done/app/modules/home/controller.dart';
 import 'package:get_it_done/app/modules/home/widgets/add_card.dart';
 import 'package:get_it_done/app/modules/home/widgets/task_card.dart';
 
-import '../../data/models/task.dart';
-
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
 
