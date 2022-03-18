@@ -19,38 +19,53 @@ class HomePage extends GetView<HomeController> {
               child: Text(
                 'My List',
                 style:
-                    TextStyle(fontSize: 24.0.sp, fontWeight: FontWeight.bold),
+                TextStyle(fontSize: 24.0.sp, fontWeight: FontWeight.bold),
               ),
             ),
             Obx(
-              () => GridView.count(
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                physics: const ClampingScrollPhysics(),
-                children: [
-                  ...controller.tasks
-                      .map((element) => LongPressDraggable(
+                  () =>
+                  GridView.count(
+                    crossAxisCount: 2,
+                    shrinkWrap: true,
+                    physics: const ClampingScrollPhysics(),
+                    children: [
+                      ...controller.tasks
+                          .map((element) =>
+                          LongPressDraggable(
                             onDragStarted: () =>
                                 controller.changeDeleting(true),
                             onDraggableCanceled: (_, __) =>
                                 controller.changeDeleting(false),
+                            onDragEnd: (_) => controller.changeDeleting(false),
                             feedback: Opacity(
                               opacity: 0.8,
                               child: TaskCard(task: element),
                             ),
                             child: TaskCard(task: element),
                           ))
-                      .toList(),
-                  AddCard()
-                ],
-              ),
+                          .toList(),
+                      AddCard()
+                    ],
+                  ),
             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
+      floatingActionButton: DragTarget(
+          builder: (_, __, ___) {
+            return Obx(
+                  () =>
+                  FloatingActionButton(
+                    backgroundColor: controller.deleting.value
+                        ? Colors.red
+                        : Colors.blue,
+                    onPressed: () {},
+                    child: Icon(
+                        controller.deleting.value ? Icons.delete : Icons.add),
+                  ),
+            )
+            ,
+          }
       ),
     );
   }
